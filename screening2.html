@@ -234,7 +234,7 @@
 
 <div id="result">
   <div id="resultText"></div>
-  <button id="backToFormButton" onclick="goBackToGoogleForm()">Googleフォームに戻る</button>
+  <button id="backToFormButton" onclick="closeThisWindow()">Googleフォームに戻る</button>
 </div>
 
 <script>
@@ -259,9 +259,9 @@
     document.getElementById('result').style.display = 'block';
   });
 
-  // Googleフォームへ戻る動作
-  function goBackToGoogleForm() {
-    window.location.href = "https://docs.google.com/forms/d/1OyzExCTgCNR5Ie35FFm0hVLeXtXqu92X25lrrSpS73Q/previewResponse";
+  // ボタンクリック時に診断ページを閉じる関数
+  function closeThisWindow() {
+    window.open('', '_self').close();
   }
 </script>
 
