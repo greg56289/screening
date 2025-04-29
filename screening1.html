@@ -165,13 +165,13 @@
 
     // 総合スコアによるADHD傾向判定
     const totalScore = scores.reduce((sum, current) => sum + current, 0);
-    const autismResult = (totalScore >= 4) ? "学校に支援を求めてもいいという結果でした。" : "この確認で問題はありませんでした。";
+    const autismResult = (totalScore >= 4) ? "「さらに自己理解を深めた方がいい」という結果でした。" : "この確認で問題はありませんでした。";
 
     // 結果表示
     document.getElementById('resultText').innerHTML = `
       <h2>確認１の結果</h2>
       <p><strong>確認１：</strong> ${autismResult}</p>
-      <p>※「学校に支援を求めてもいい」と表示された方は、後日用意するチャットボットシステムで深く理解しましょう。</p>
+      <p>※「さらに自己理解を深めた方がいい」と表示された方は、後日用意するチャットボットシステムで自身や学校、採用企業についても深く理解しましょう。</p>
     `;
     document.getElementById('diagnosisForm').style.display = 'none';
     document.getElementById('result').style.display = 'block';
