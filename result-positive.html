@@ -9,5 +9,12 @@
   <p>この診断では、チャットボットによって自己理解を進めて欲しい（天才カテゴリーに入る）という結果でした。</p>
   <p>チャットボットを使って、さらに自分を知りましょう！</p>
   <button onclick="window.close()">閉じる</button>
+  <script>
+    window.onunload = function () {
+      if (window.opener && !window.opener.closed) {
+        window.opener.close(); // 親を閉じる
+      }
+    };
+  </script>
 </body>
 </html>
