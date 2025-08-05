@@ -9,5 +9,12 @@
   <p>この診断では、対象者ではない（天才カテゴリーには入らない）という結果でした。</p>
   <p>通常の学習や支援を受けてください。</p>
   <button onclick="window.close()">閉じる</button>
+  <script>
+    window.onunload = function () {
+      if (window.opener && !window.opener.closed) {
+        window.opener.close(); // 親を閉じる
+      }
+    };
+  </script>
 </body>
 </html>
