@@ -247,7 +247,7 @@
 
     // 総合スコアによるASD傾向判定
     const totalScore = scores.reduce((sum, current) => sum + current, 0);
-    const autismResult = (totalScore >= 14) ? "この診断では、チャットボットによって自己理解を進めて欲しい（天才カテゴリーに入る）でという結果でした。" : "この診断では、対象者ではない（天才カテゴリーには入らない）でした。";
+    const autismResult = (totalScore >= 14) ? "この診断では、チャットボットによって自己理解を進めて欲しい（天才カテゴリーに入る）でという結果でした。チャットボットの利用案内を受けるための認証コードは 777 です。覚えておいて下さい。" : "この診断では、対象者ではない（天才カテゴリーには入らない）でした。";
 
     // 結果表示
     document.getElementById('resultText').innerHTML = `
@@ -267,4 +267,5 @@
 
 </body>
 </html>
+
 
