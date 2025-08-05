@@ -10,7 +10,7 @@
       margin: 2rem;
       background: #f9f9f9;
     }
-    form, #result-positive, #result-negative {
+    form, #reading-page {
       max-width: 600px;
       margin: auto;
       background: white;
@@ -123,18 +123,15 @@
   <button type="submit">診断する</button>
 </form>
 
-<div id="result-positive" class="hidden">
-  <h2>診断結果（天才カテゴリー）</h2>
-  <p>この診断では、チャットボットによって自己理解を進めて欲しい（天才カテゴリーに入る）という結果でした。</p>
-  <p>チャットボットを使って、さらに自分を知りましょう！</p>
-  <button onclick="resetForm()">戻る</button>
-</div>
-
-<div id="result-negative" class="hidden">
-  <h2>診断結果（対象外）</h2>
-  <p>この診断では、対象者ではない（天才カテゴリーには入らない）という結果でした。</p>
-  <p>通常の学習や支援を受けてください。</p>
-  <button onclick="resetForm()">戻る</button>
+<div id="reading-page" class="hidden">
+  <h2>次のステップへ</h2>
+  <p>診断ありがとうございます。あなたの診断結果は確認されました。</p>
+  <p>このあとは、以下のページで理解を深めてください：</p>
+  <ul>
+    <li>  自己理解に役立つチャットボットの活用法</li>
+    <li>  障害特性に応じた支援制度について</li>
+    <li>  学校や職場でのサポートの受け方</li>
+  </ul>
 </div>
 
 <script>
@@ -144,19 +141,8 @@
     const scores = Array.from(formData.values()).map(Number);
     const totalScore = scores.reduce((sum, current) => sum + current, 0);
     document.getElementById('diagnosisForm').classList.add('hidden');
-    if (totalScore >= 4) {
-      document.getElementById('result-positive').classList.remove('hidden');
-    } else {
-      document.getElementById('result-negative').classList.remove('hidden');
-    }
+    document.getElementById('reading-page').classList.remove('hidden');
   });
-
-  function resetForm() {
-    document.getElementById('diagnosisForm').reset();
-    document.getElementById('diagnosisForm').classList.remove('hidden');
-    document.getElementById('result-positive').classList.add('hidden');
-    document.getElementById('result-negative').classList.add('hidden');
-  }
 </script>
 </body>
 </html>
