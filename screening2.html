@@ -247,13 +247,13 @@
 
     // 総合スコアによるASD傾向判定
     const totalScore = scores.reduce((sum, current) => sum + current, 0);
-    const autismResult = (totalScore >= 14) ? "学校に支援を求めてもいいという結果でした。" : "この確認で問題はありませんでした。";
+    const autismResult = (totalScore >= 14) ? "この診断では、チャットボットによって自己理解を進めて欲しい（天才カテゴリーに入る）でという結果でした。" : "この診断では、対象者ではない（天才カテゴリーには入らない）でした。";
 
     // 結果表示
     document.getElementById('resultText').innerHTML = `
       <h2>確認２の結果</h2>
       <p><strong>確認２：</strong> ${autismResult}</p>
-      <p>※「学校に支援を求めてもいい」と表示された方は、後日用意するチャットボットシステムで深く理解しましょう。</p>
+      <p>※「チャットボットによって自己理解を進めて欲しい」と表示された方は、チャットボットシステムで深く理解しましょう。</p>
     `;
     document.getElementById('diagnosisForm').style.display = 'none';
     document.getElementById('result').style.display = 'block';
@@ -267,3 +267,4 @@
 
 </body>
 </html>
+
