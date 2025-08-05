@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -45,38 +45,13 @@
     button:hover {
       background-color: #45a049;
     }
-    #result {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background-color: #e7f4e4;
-      border-left: 5px solid #4CAF50;
-      display: none;
-      text-align: center;
-    }
-    #backToFormButton {
-      margin-top: 2rem;
-      padding: 1rem 2rem;
-      background-color: #555;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #backToFormButton:hover {
-      background-color: #333;
-    }
   </style>
 </head>
-
 <body>
-
 <h1 style="text-align:center;">１つめの確認です</h1>
-
 <form id="diagnosisForm">
   <div class="question">
-    <label>物事を行なうにあたって、難所は乗り越えたのに、詰めが甘くて仕上げるのが困難だったことが、どのくらいの頻度でありますか？<br>（むずかしいところは乗りこえたのに、最後の仕上げがうまくできなかったことは、どれくらいありますか？）</label>
+    <label>物事を行なうにあたって、難所は乗り越えたのに、詰めが甘くて仕上げるのが困難だったことが、どのくらいの頻度でありますか？</label>
     <select name="q1" required>
       <option value="">選んでください</option>
       <option value="0">まったくない</option>
@@ -86,9 +61,8 @@
       <option value="1">非常に頻繁</option>
     </select>
   </div>
-
   <div class="question">
-    <label>計画性を要する作業を行なう際に、作業を順序だてるのが困難だったことが、どのくらいの頻度でありますか？<br>（計画を立ててやらなきゃいけない作業で、順番を決めるのがむずかしかったことは、どれくらいありますか？）</label>
+    <label>計画性を要する作業を行なう際に、作業を順序だてるのが困難だったことが、どのくらいの頻度でありますか？</label>
     <select name="q2" required>
       <option value="">選んでください</option>
       <option value="0">まったくない</option>
@@ -98,9 +72,8 @@
       <option value="1">非常に頻繁</option>
     </select>
   </div>
-
   <div class="question">
-    <label>約束や、しなければならない用事を忘れたことが、どのくらいの頻度でありますか？<br>（約束していたことや、やらなきゃいけない用事を忘れたことは、どれくらいありますか？）</label>
+    <label>約束や、しなければならない用事を忘れたことが、どのくらいの頻度でありますか？</label>
     <select name="q3" required>
       <option value="">選んでください</option>
       <option value="0">まったくない</option>
@@ -110,9 +83,8 @@
       <option value="1">非常に頻繁</option>
     </select>
   </div>
-
-    <div class="question">
-    <label>じっくりと考える必要のある課題に取り掛かるのを避けたり、遅らせたりすることが、どのくらいの頻度でありますか？<br>（じっくり考えてやらなきゃいけない宿題や課題を、始めるのを後回しにしたり、やるのをさけたりしたことは、どれくらいありますか？）</label>
+  <div class="question">
+    <label>じっくりと考える必要のある課題に取り掛かるのを避けたり、遅らせたりすることが、どのくらいの頻度でありますか？</label>
     <select name="q4" required>
       <option value="">選んでください</option>
       <option value="0">まったくない</option>
@@ -122,9 +94,8 @@
       <option value="1">非常に頻繁</option>
     </select>
   </div>
-
   <div class="question">
-    <label>長時間座っていなければならない時に、手足をそわそわと動かしたり、もぞもぞしたりすることが、どのくらいの頻度でありますか？<br>（長い時間、座っていなきゃいけないときに、手や足をそわそわ動かしたり、もぞもぞしたりしたことは、どれくらいありますか？）</label>
+    <label>長時間座っていなければならない時に、手足をそわそわと動かしたり、もぞもぞしたりすることが、どのくらいの頻度でありますか？</label>
     <select name="q5" required>
       <option value="">選んでください</option>
       <option value="0">まったくない</option>
@@ -134,9 +105,8 @@
       <option value="1">非常に頻繁</option>
     </select>
   </div>
-
- <div class="question">
-    <label>まるで何かに駆り立てられるかのように過度に活動的になったり、何かせずにいられなくなることが、どのくらいの頻度でありますか？<br>（まるで何かにせきたてられるみたいに、じっとしていられずに動き回ったり、何かをし続けてしまうことは、どれくらいありますか？）</label>
+  <div class="question">
+    <label>まるで何かに駆り立てられるかのように過度に活動的になったり、何かせずにいられなくなることが、どのくらいの頻度でありますか？</label>
     <select name="q6" required>
       <option value="">選んでください</option>
       <option value="0">まったくない</option>
@@ -146,43 +116,23 @@
       <option value="1">非常に頻繁</option>
     </select>
   </div>
-  
   <button type="submit">診断する</button>
 </form>
-
-<div id="result">
-  <div id="resultText"></div>
-  <button id="backToFormButton" onclick="closeThisWindow()">閉じる</button>
-</div>
-
 <script>
-  // 診断ボタンクリック時の動作
   document.getElementById('diagnosisForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // フォーム送信止める
-
+    e.preventDefault();
     const formData = new FormData(this);
-    const scores = Array.from(formData.values()).map(Number); // 数値に変換
-
-    // 総合スコアによるADHD傾向判定
+    const scores = Array.from(formData.values()).map(Number);
     const totalScore = scores.reduce((sum, current) => sum + current, 0);
-    const autismResult = (totalScore >= 4) ? "この診断では、チャットボットによって自己理解を進めて欲しい（天才カテゴリーに入る）でという結果でした。" : "この診断では、対象者ではない（天才カテゴリーには入らない）でした。";
-
-    // 結果表示
-    document.getElementById('resultText').innerHTML = `
-      <h2>確認１の結果</h2>
-      <p><strong>確認１：</strong> ${autismResult}</p>
-      <p>※「チャットボットによって自己理解を進めて欲しい」と表示された方は、チャットボットシステムで深く理解しましょう。</p>
-    `;
-    document.getElementById('diagnosisForm').style.display = 'none';
-    document.getElementById('result').style.display = 'block';
+    const resultPage = (totalScore >= 4) ? "result-positive.html" : "result-negative.html";
+    const resultWin = window.open(resultPage, '_blank', 'width=600,height=600');
+    const timer = setInterval(function () {
+      if (resultWin.closed) {
+        window.close();
+        clearInterval(timer);
+      }
+    }, 500);
   });
-
-// ボタンクリック時に診断ページを閉じる関数
-function closeThisWindow() {
-  window.open('', '_self').close();
-}
 </script>
-
 </body>
 </html>
-
